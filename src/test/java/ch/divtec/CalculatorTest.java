@@ -40,7 +40,7 @@ class CalculatorTest {
 
     @Test
     void multiplyFirstZero() {
-        assertEquals(0, calculator.multiply(0, -564838));
+        assertEquals(0.0, calculator.multiply(0, -564838));
     }
 
     @Test
