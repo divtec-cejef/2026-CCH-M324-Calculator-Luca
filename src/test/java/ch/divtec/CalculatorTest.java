@@ -3,9 +3,9 @@ package ch.divtec;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalculatorTest {
+
     private final Calculator calculator = new Calculator();
 
     @Test
@@ -19,12 +19,12 @@ class CalculatorTest {
     }
 
     @Test
-    void substractNormal() {
+    void subtractNormal() {
         assertEquals(1, calculator.subtract(3, 2));
     }
 
     @Test
-    void substractNegative() {
+    void subtractNegative() {
         assertEquals(-1, calculator.subtract(-3, -2));
     }
 
@@ -40,7 +40,7 @@ class CalculatorTest {
 
     @Test
     void multiplyFirstZero() {
-        assertEquals(0, Math.abs(calculator.multiply(0, -564838)));
+        assertEquals(0, calculator.multiply(0, -564838));
     }
 
     @Test
@@ -50,9 +50,11 @@ class CalculatorTest {
 
     @Test
     void factorialDecimal() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            calculator.factorial(3.2);
-        });
+
+        Exception exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.factorial(3.2)
+        );
 
         String expectedMessage = "Number must be an integer";
         String actualMessage = exception.getMessage();
@@ -62,9 +64,11 @@ class CalculatorTest {
 
     @Test
     void factorialNegative() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            calculator.factorial(-5);
-        });
+
+        Exception exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.factorial(-5)
+        );
 
         String expectedMessage = "Number must be positive";
         String actualMessage = exception.getMessage();
