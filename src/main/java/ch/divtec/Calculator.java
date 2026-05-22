@@ -21,6 +21,10 @@ public class Calculator {
     }
 
     long factorial(double n) {
+        if(n < 0) {
+            throw new IllegalArgumentException("Number must be positive.");
+        }
+
         if (n != (int)n) {
             throw new IllegalArgumentException("Number must be an integer.");
         }
